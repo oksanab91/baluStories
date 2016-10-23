@@ -1,7 +1,7 @@
 /* global tinymce */
 tinymce.PluginManager.add( 'wplink', function( editor ) {
 	var linkButton;
-	
+
 	// Register a command so that it can be invoked by using tinyMCE.activeEditor.execCommand( 'WP_Link' );
 	editor.addCommand( 'WP_Link', function() {
 		if ( ( ! linkButton || ! linkButton.disabled() ) && typeof window.wpLink !== 'undefined' ) {

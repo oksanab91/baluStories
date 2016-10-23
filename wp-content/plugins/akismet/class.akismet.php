@@ -9,7 +9,7 @@ class Akismet {
 	private static $initiated = false;
 	private static $prevent_moderation_email_for_these_comments = array();
 	private static $last_comment_result = null;
-	
+
 	public static function init() {
 		if ( ! self::$initiated ) {
 			self::init_hooks();
@@ -39,7 +39,7 @@ class Akismet {
 
 		add_filter( 'comment_moderation_recipients', array( 'Akismet', 'disable_moderation_emails_if_unreachable' ), 1000, 2 );
 		add_filter( 'pre_comment_approved', array( 'Akismet', 'last_comment_status' ), 10, 2 );
-		
+
 		add_action( 'transition_comment_status', array( 'Akismet', 'transition_comment_status' ), 10, 3 );
 
 		if ( '3.0.5' == $GLOBALS['wp_version'] ) {
@@ -151,7 +151,7 @@ class Akismet {
 				die();
 			}
 		}
-		
+
 		// if the response is neither true nor false, hold the comment for moderation and schedule a recheck
 		if ( 'true' != $response[1] && 'false' != $response[1] ) {
 			if ( !current_user_can('moderate_comments') ) {
@@ -176,17 +176,17 @@ class Akismet {
 			// WP 2.0: run this one time in ten
 			self::delete_old_comments();
 		}
-		
+
 		self::set_last_comment( $commentdata );
 		self::fix_scheduled_recheck();
 
 		return self::$last_comment;
 	}
-	
+
 	public static function get_last_comment() {
 		return self::$last_comment;
 	}
-	
+
 	public static function set_last_comment( $comment ) {
 		if ( is_null( $comment ) ) {
 			self::$last_comment = null;
@@ -218,9 +218,9 @@ class Akismet {
 		// as was checked by auto_check_comment
 		if ( is_object( $comment ) && !empty( self::$last_comment ) && is_array( self::$last_comment ) ) {
 			if ( self::matches_last_comment( $comment ) ) {
-					
+
 					load_plugin_textdomain( 'akismet' );
-					
+
 					// normal result: true or false
 					if ( self::$last_comment['akismet_result'] == 'true' ) {
 						update_comment_meta( $comment->comment_ID, 'akismet_result', 'true' );
@@ -392,28 +392,28 @@ class Akismet {
 
 		return ( is_array( $response ) && ! empty( $response[1] ) ) ? $response[1] : false;
 	}
-	
-	
+
+
 
 	public static function transition_comment_status( $new_status, $old_status, $comment ) {
-		
+
 		if ( $new_status == $old_status )
 			return;
 
 		# we don't need to record a history item for deleted comments
 		if ( $new_status == 'delete' )
 			return;
-		
+
 		if ( !current_user_can( 'edit_post', $comment->comment_post_ID ) && !current_user_can( 'moderate_comments' ) )
 			return;
 
 		if ( defined('WP_IMPORTING') && WP_IMPORTING == true )
 			return;
-			
+
 		// if this is present, it means the status has been changed by a re-check, not an explicit user action
 		if ( get_comment_meta( $comment->comment_ID, 'akismet_rechecking' ) )
 			return;
-		
+
 		global $current_user;
 		$reporter = '';
 		if ( is_object( $current_user ) )
@@ -441,7 +441,7 @@ class Akismet {
 
 		self::update_comment_history( $comment->comment_ID, sprintf( __('%1$s changed the comment status to %2$s', 'akismet'), $reporter, $new_status ), 'status-' . $new_status );
 	}
-	
+
 	public static function submit_spam_comment( $comment_id ) {
 		global $wpdb, $current_user, $current_site;
 
@@ -553,7 +553,7 @@ class Akismet {
 		delete_option('akismet_available_servers');
 
 		$comment_errors = $wpdb->get_col( "SELECT comment_id FROM {$wpdb->commentmeta} WHERE meta_key = 'akismet_error'	LIMIT 100" );
-		
+
 		load_plugin_textdomain( 'akismet' );
 
 		foreach ( (array) $comment_errors as $comment_id ) {
@@ -596,7 +596,7 @@ class Akismet {
 							wp_notify_moderator( $comment_id );
 					}
 				}
-				
+
 				delete_comment_meta( $comment_id, 'akismet_delayed_moderation_email' );
 			} else {
 				// If this comment has been pending moderation for longer than MAX_DELAY_BEFORE_MODERATION_EMAIL,
@@ -645,20 +645,20 @@ class Akismet {
 	public static function is_test_mode() {
 		return defined('AKISMET_TEST_MODE') && AKISMET_TEST_MODE;
 	}
-	
+
 	public static function allow_discard() {
 		if ( defined( 'DOING_AJAX' ) && DOING_AJAX )
 			return false;
 		if ( is_user_logged_in() )
 			return false;
-	
+
 		return ( get_option( 'akismet_strictness' ) === '1'  );
 	}
 
 	public static function get_ip_address() {
 		return isset( $_SERVER['REMOTE_ADDR'] ) ? $_SERVER['REMOTE_ADDR'] : null;
 	}
-	
+
 	/**
 	 * Do these two comments, without checking the comment_ID, "match"?
 	 *
@@ -669,7 +669,7 @@ class Akismet {
 	private static function comments_match( $comment1, $comment2 ) {
 		$comment1 = (array) $comment1;
 		$comment2 = (array) $comment2;
-		
+
 		return (
 			   isset( $comment1['comment_post_ID'], $comment2['comment_post_ID'] )
 			&& intval( $comment1['comment_post_ID'] ) == intval( $comment2['comment_post_ID'] )
@@ -677,7 +677,7 @@ class Akismet {
 			&& $comment1['comment_author_email'] == $comment2['comment_author_email']
 		);
 	}
-	
+
 	// Does the supplied comment match the details of the one most recently stored in self::$last_comment?
 	public static function matches_last_comment( $comment ) {
 		if ( is_object( $comment ) )
@@ -733,7 +733,7 @@ class Akismet {
 
 		return self::$last_comment_result;
 	}
-	
+
 	/**
 	 * If Akismet is temporarily unreachable, we don't want to "spam" the blogger with
 	 * moderation emails for comments that will be automatically cleared or spammed on
@@ -846,7 +846,7 @@ class Akismet {
 		add_action( 'wp_footer', array( 'Akismet', 'print_form_js' ) );
 		add_action( 'admin_footer', array( 'Akismet', 'print_form_js' ) );
 	}
-	
+
 	public static function print_form_js() {
 		wp_print_scripts( 'akismet-form' );
 	}
@@ -900,11 +900,11 @@ p {
 
 	public static function view( $name, array $args = array() ) {
 		$args = apply_filters( 'akismet_view_arguments', $args, $name );
-		
+
 		foreach ( $args AS $key => $val ) {
 			$$key = $val;
 		}
-		
+
 		load_plugin_textdomain( 'akismet' );
 
 		$file = AKISMET__PLUGIN_DIR . 'views/'. $name . '.php';
@@ -919,7 +919,7 @@ p {
 	public static function plugin_activation() {
 		if ( version_compare( $GLOBALS['wp_version'], AKISMET__MINIMUM_WP_VERSION, '<' ) ) {
 			load_plugin_textdomain( 'akismet' );
-			
+
 			$message = '<strong>'.sprintf(esc_html__( 'Akismet %s requires WordPress %s or higher.' , 'akismet'), AKISMET_VERSION, AKISMET__MINIMUM_WP_VERSION ).'</strong> '.sprintf(__('Please <a href="%1$s">upgrade WordPress</a> to a current version, or <a href="%2$s">downgrade to version 2.4 of the Akismet plugin</a>.', 'akismet'), 'https://codex.wordpress.org/Upgrading_WordPress', 'http://wordpress.org/extend/plugins/akismet/download/');
 
 			Akismet::bail_on_activation( $message );
@@ -933,7 +933,7 @@ p {
 	public static function plugin_deactivation( ) {
 		//tidy up
 	}
-	
+
 	/**
 	 * Essentially a copy of WP's build_query but one that doesn't expect pre-urlencoded values.
 	 *

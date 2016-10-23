@@ -14,7 +14,7 @@
 	$.table_hotkeys = function(table, keys, opts) {
 		opts = $.extend($.table_hotkeys.defaults, opts);
 		var selected_class, destructive_class, set_current_row, adjacent_row_callback, get_adjacent_row, adjacent_row, prev_row, next_row, check, get_first_row, get_last_row, make_key_callback, first_row;
-		
+
 		selected_class = opts.class_prefix + opts.selected_suffix;
 		destructive_class = opts.class_prefix + opts.destructive_suffix;
 		set_current_row = function (tr) {
@@ -30,7 +30,7 @@
 		};
 		get_adjacent_row = function(which) {
 			var first_row, method;
-			
+
 			if (!$.table_hotkeys.current_row) {
 				first_row = get_first_row();
 				$.table_hotkeys.current_row = first_row;
@@ -79,7 +79,7 @@
 		$.hotkeys.add(opts.mark_key, opts.hotkeys_opts, check);
 		$.each(keys, function() {
 			var callback, key;
-			
+
 			if ($.isFunction(this[1])) {
 				callback = this[1];
 				key = this[0];

@@ -22,21 +22,21 @@
 		'default \'0000-00-00 00:00:00\''	=> 'DEFAULT now()',
 		'datetime'		=> 'timestamp',
 		'DEFAULT CHARACTER SET utf8'	=> '',
-		
+
 		// WP 2.7.1 compatibility
 		'int(4)'		=> 'smallint',
-		
+
 		// For WPMU (starting with WP 3.2)
 		'tinyint(2)'	=> 'smallint',
 		'tinyint(1)'	=> 'smallint',
 		"enum('0','1')"	=> 'smallint',
 		'COLLATE utf8_general_ci'	=> '',
 	);
-	
+
 	function pg4wp_installing( $sql, &$logto)
 	{
 		global $wpdb;
-		
+
 		// SHOW INDEX emulation
 		if( 0 === strpos( $sql, 'SHOW INDEX'))
 		{
@@ -173,14 +173,14 @@ WHERE pg_class.relname='$table_name' AND pg_attribute.attnum>=1 AND NOT pg_attri
 			$pattern = '/CREATE TABLE [`]?(\w+)[`]?/';
 			preg_match($pattern, $sql, $matches);
 			$table = $matches[1];
-			
+
 			// Remove trailing spaces
 			$sql = trim( $sql).';';
-			
+
 			// Translate types and some other replacements
 			$sql = str_replace(
 				array_keys($GLOBALS['pg4wp_ttr']), array_values($GLOBALS['pg4wp_ttr']), $sql);
-			
+
 			// Fix auto_increment by adding a sequence
 			$pattern = '/int[ ]+NOT NULL auto_increment/';
 			preg_match($pattern, $sql, $matches);
@@ -190,7 +190,7 @@ WHERE pg_class.relname='$table_name' AND pg_attribute.attnum>=1 AND NOT pg_attri
 				$sql = str_replace( 'NOT NULL auto_increment', "NOT NULL DEFAULT nextval('$seq'::text)", $sql);
 				$sql .= "\nCREATE SEQUENCE $seq;";
 			}
-			
+
 			// Support for INDEX creation
 			$pattern = '/,\s+(UNIQUE |)KEY\s+([^\s]+)\s+\(((?:[\w]+(?:\([\d]+\))?[,]?)*)\)/';
 			if( preg_match_all( $pattern, $sql, $matches, PREG_SET_ORDER))
@@ -216,6 +216,6 @@ WHERE pg_class.relname='$table_name' AND pg_attribute.attnum>=1 AND NOT pg_attri
 			$seq = $table . '_seq';
 			$sql .= ";\nDROP SEQUENCE IF EXISTS $seq;";
 		}// DROP TABLE
-		
+
 		return $sql;
 	}

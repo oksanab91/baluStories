@@ -90,9 +90,9 @@
 													</fieldset>
 													<span class="note"><strong><?php esc_html_e('Note:', 'akismet');?></strong>
 													<?php
-													
+
 													$delete_interval = max( 1, intval( apply_filters( 'akismet_delete_comment_interval', 15 ) ) );
-													
+
 													printf(
 														_n(
 															'Spam in the <a href="%s">spam folder</a> older than 1 day is deleted automatically.',
@@ -103,7 +103,7 @@
 														admin_url( 'edit-comments.php?comment_status=spam' ),
 														$delete_interval
 													);
-													
+
 													?>
 												</td>
 											</tr>
@@ -147,17 +147,17 @@
 											<th scope="row" align="left"><?php esc_html_e( 'Status' , 'akismet');?></th>
 											<td width="5%"/>
 											<td align="left">
-												<span><?php 
+												<span><?php
 													if ( 'cancelled' == $akismet_user->status ) :
-														esc_html_e( 'Cancelled', 'akismet' ); 
+														esc_html_e( 'Cancelled', 'akismet' );
 													elseif ( 'suspended' == $akismet_user->status ) :
 														esc_html_e( 'Suspended', 'akismet' );
 													elseif ( 'missing' == $akismet_user->status ) :
-														esc_html_e( 'Missing', 'akismet' ); 
+														esc_html_e( 'Missing', 'akismet' );
 													elseif ( 'no-sub' == $akismet_user->status ) :
 														esc_html_e( 'No Subscription Found', 'akismet' );
 													else :
-														esc_html_e( 'Active', 'akismet' );  
+														esc_html_e( 'Active', 'akismet' );
 													endif; ?></span>
 											</td>
 										</tr>

@@ -142,7 +142,7 @@ class WP_Scripts extends WP_Dependencies {
 
 		$tag = "<script type='text/javascript' src='$src'></script>\n";
 
-		/** 
+		/**
 		 * Filter the HTML script tag of an enqueued script.
 		 *
 		 * @since 4.1.0

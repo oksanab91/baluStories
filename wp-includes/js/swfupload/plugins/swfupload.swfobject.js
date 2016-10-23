@@ -26,7 +26,7 @@
 				});
 			};
 		</script>
-		
+
 	Notes:
 		You must provide set minimum_flash_version setting to "8" if you are using SWFUpload for Flash Player 8.
 		The swfuploadLoadFailed event is only fired if the minimum version of Flash Player is not met.  Other issues such as missing SWF files, browser bugs
@@ -39,7 +39,7 @@
 
 
 // SWFObject v2.1 must be loaded
-	
+
 var SWFUpload;
 if (typeof(SWFUpload) === "function") {
 	SWFUpload.onload = function () {};
@@ -73,7 +73,7 @@ if (typeof(SWFUpload) === "function") {
 	SWFUpload.prototype.loadFlash = function (oldLoadFlash) {
 		return function () {
 			var hasFlash = swfobject.hasFlashPlayerVersion(this.settings.minimum_flash_version);
-			
+
 			if (hasFlash) {
 				this.queueEvent("swfupload_pre_load_handler");
 				if (typeof(oldLoadFlash) === "function") {
@@ -83,15 +83,15 @@ if (typeof(SWFUpload) === "function") {
 				this.queueEvent("swfupload_load_failed_handler");
 			}
 		};
-		
+
 	}(SWFUpload.prototype.loadFlash);
-			
+
 	SWFUpload.prototype.displayDebugInfo = function (oldDisplayDebugInfo) {
 		return function () {
 			if (typeof(oldDisplayDebugInfo) === "function") {
 				oldDisplayDebugInfo.call(this);
 			}
-			
+
 			this.debug(
 				[
 					"SWFUpload.SWFObject Plugin settings:", "\n",
@@ -100,6 +100,6 @@ if (typeof(SWFUpload) === "function") {
 					"\t", "swfupload_load_failed_handler assigned:     ", (typeof(this.settings.swfupload_load_failed_handler) === "function").toString(), "\n",
 				].join("")
 			);
-		};	
+		};
 	}(SWFUpload.prototype.displayDebugInfo);
 }

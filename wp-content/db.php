@@ -1,6 +1,6 @@
 <?php
-/* 
-Added Development Environment/localhost check to return localhost URL 
+/*
+Added Development Environment/localhost check to return localhost URL
 inspired by http://codex.wordpress.org/Running_a_Development_Copy_of_WordPress
 Author: @khbites
 */

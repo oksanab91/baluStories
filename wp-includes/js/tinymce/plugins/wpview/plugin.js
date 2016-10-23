@@ -162,7 +162,7 @@ tinymce.PluginManager.add( 'wpview', function( editor ) {
 			toolbar = editor.$( viewNode ).find( '.toolbar' ),
 			editorToolbar = tinymce.$( editor.editorContainer ).find( '.mce-toolbar-grp' )[0],
 			editorToolbarBottom = ( editorToolbar && editorToolbar.getBoundingClientRect().bottom ) || 0;
-		
+
 		if ( toolbar.length && editor.iframeElement ) {
 			// 48 = 43 for the toolbar + 5 buffer
 			delta = viewNode.getBoundingClientRect().top + editor.iframeElement.getBoundingClientRect().top - editorToolbarBottom - 48;

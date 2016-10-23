@@ -39,7 +39,7 @@ class Region extends Enum
 
     const EU_WEST_1           = 'eu-west-1';
     const IRELAND             = 'eu-west-1';
-    
+
     const EU_CENTRAL_1        = 'eu-central-1';
     const FRANKFURT           = 'eu-central-1';
 
