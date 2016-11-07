@@ -1,0 +1,38 @@
+/*
+ * Style for Noteskine dashboard page.
+ */
+
+.dashboard-wrap {
+	width: 640px;
+}
+
+.dashboard-wrap img {
+	width: 640px;
+}
+
+.dashboard-wrap h2 {
+		font-size: 24px;
+		font-weight: bold;
+}
+
+.dashboard-wrap p {
+	font-size: 18px;
+	font-style: italic;
+}
+
+.dashboard-wrap .mail {
+	font-weight: bold;
+	text-align: center;
+}
+.dashboard-wrap .important {
+	font-weight: bold;
+}
+
+.dashboard-wrap form {
+
+}
+
+.dashboard-wrap .sign {
+	float: right;
+	font-weight: bold;
+}

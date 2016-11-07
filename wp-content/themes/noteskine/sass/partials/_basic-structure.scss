@@ -1,0 +1,22 @@
+/**
+* 	3.0 Basic Structure
+*
+* ------------------------------------------------------------------------------------------
+*/
+
+body.custom-background {
+	-webkit-background-size: 100% auto;
+	-moz-background-size: 100% auto;
+	background-size: 100% auto;
+}
+
+#page {
+	min-height: 100%;
+	position: relative;
+}
+
+#main {
+	margin: 0 auto;
+	max-width: 960px;
+	padding-bottom: 1px;
+}

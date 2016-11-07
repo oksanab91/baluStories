@@ -1,0 +1,477 @@
+/*
+Theme Name: Noteskine
+Description: Used to style the TinyMCE editor.
+*/
+
+/**
+ * Table of Contents:
+ *
+ * 1.0 - Body
+ * 2.0 - Headings
+ * 3.0 - Text Elements
+ * 4.0 - Drop-cap, Pull Quote, Highlighted Box.
+ * 5.0 - Links
+ * 6.0 - Alignment
+ * 7.0 - Tables
+ * 8.0 - Images
+ * 9.0 - Galleries
+ * 10.0 - Audio/Video
+ * ----------------------------------------------------------------------------
+ */
+
+/**
+ * 1.0 Body
+ * ----------------------------------------------------------------------------
+ */
+
+html .mceContentBody {
+	font-size: 16px;
+	max-width: 570px;
+}
+
+body {
+	color: #2a4557;
+	font-family: Open Sans, Helvetica;
+	font-weight: 400;
+	line-height: 1.5;
+	vertical-align: baseline;
+}
+
+/**
+ * 2.0 Headings
+ * ----------------------------------------------------------------------------
+ */
+
+h1 {
+	font-size: 22px;
+}
+
+h2 {
+	font-size: 21px;
+}
+
+h3 {
+	font-size: 20px;
+}
+
+h4 {
+	font-size: 19px;
+}
+
+h5 {
+	font-size: 18px;
+}
+
+h6 {
+	font-size: 17px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 16px auto;
+	line-height: 1.5;
+}
+
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+	margin-top: 0;
+}
+
+/**
+ * 3.0 Text Elements
+ * ----------------------------------------------------------------------------
+ */
+
+address {
+	font-style: italic;
+	margin: 16px 0;
+}
+
+abbr {
+	text-transform: uppercase;
+}
+
+b,
+strong {
+	font-weight: 700;
+}
+
+small {
+	font-size: smaller;
+}
+
+big {
+	font-size: 125%;
+}
+
+cite, em, i {
+    font-style: italic;
+}
+
+code,
+pre,
+kbd,
+var,
+tt {
+	font-family: monospace, serif;
+}
+
+code, pre {
+	background: #ebebeb;
+}
+
+pre {
+	margin: 16px 0;
+	max-width: 100%;
+	overflow: auto;
+	padding: 12px;
+	white-space: pre;
+	font-size: 16px;
+}
+
+q,
+blockquote {
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after {
+	content: none;
+}
+
+blockquote {
+	color: #888;
+	border-left: 2px solid #aaa;
+	padding: 0 3%;
+	margin: 16px 0;
+}
+
+sup {
+	position: relative;
+	bottom: 0em;
+	font-size: 0.8em;
+}
+
+sub {
+	position: relative;
+	top: 0.3em;
+	font-size: 0.8em;
+}
+
+dl {
+	margin: 16px 0;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 16px 0;
+	padding-left: 4%;
+}
+
+ul,
+ol {
+	list-style-position: outside;
+	margin: 16px 0;
+	padding-left: 4%;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	padding-left: 4%;
+}
+
+li {
+	margin: 4px 0;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+ins {
+	text-decoration: underline;
+}
+
+hr {
+	background: #aaa;
+	border: 0;
+	width: 33%;
+	height: 2px;
+}
+
+p {
+	margin: 16px 0;
+	line-height: 1.5;
+}
+
+/**
+ * 4.0 Dropcap, Pull Quote, Highlied Box.
+ * ----------------------------------------------------------------------------
+ */
+
+.noteskine-dropcap {
+	float: left;
+	font-size: 48px;
+	line-height: 48px;
+	padding-right: 10px;
+}
+
+.noteskine-box {
+	border-top: 1px solid #aaa;
+	border-bottom: 1px solid #aaa;
+}
+
+.noteskine-pull-quote-left,
+.noteskine-pull-quote-right {
+	color: #888;
+	max-width: 50%;
+}
+
+.noteskine-pull-quote-left {
+	float: left;
+	margin: 16px 24px 16px 0;
+}
+
+.noteskine-pull-quote-right {
+	float: right;
+	margin: 16px 0 16px 24px;
+}
+
+/**
+ * 5.0 Links
+ * ----------------------------------------------------------------------------
+ */
+
+a {
+	color: #006CD9;
+	text-decoration: underline;
+}
+
+/**
+ * 6.0 Alignment
+ * ----------------------------------------------------------------------------
+ */
+
+.alignleft {
+	float: left;
+	margin: 16px 24px 16px 0;
+}
+
+.alignright {
+	float: right;
+	margin: 16px 0 16px 24px;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin: 16px auto;
+}
+
+/**
+ * 7.0 Tables
+ * ----------------------------------------------------------------------------
+ */
+
+table {
+	margin: 16px 0;
+}
+
+th {
+	font-weight: bold;
+}
+
+th,
+td {
+	font-size: 14px;
+	padding: 4px;
+}
+
+/**
+ * 8.0 Images
+ * ----------------------------------------------------------------------------
+ */
+
+img {
+	height: auto;
+	max-width: 570px;
+	vertical-align: middle;
+}
+
+img.alignleft {
+	max-width: 50%;
+	float: left;
+	margin: 16px 24px 16px 0;
+}
+
+img.alignright {
+	max-width: 50%;
+	float: right;
+	margin: 16px 0 16px 24px;
+}
+
+.wp-caption,
+.html5-captions .wp-caption {
+	background: transparent;
+	border: none;
+	color: #888;
+	margin: 16px 0;
+	max-width: 100%;
+	padding: 0;
+	text-align: left;
+	overflow: hidden;
+}
+
+.wp-caption.alignleft,
+.html5-captions .wp-caption.alignleft {
+	max-width: 50%;
+	margin: 16px 24px 16px 0;
+}
+
+.wp-caption.alignright,
+.html5-captions .wp-caption.alignright {
+	max-width: 50%;
+	margin: 16px 0 16px 24px;
+}
+
+.wp-caption img {
+	max-width: 100%;
+}
+
+.wp-caption.alignright img,
+.wp-caption.alignright .wp-caption-dd {
+	padding-left: 10px;
+
+}
+
+.html5-captions .wp-caption.alignright img,
+.html5-captions .wp-caption.alignright .wp-caption-dd {
+	padding: 0;
+}
+
+.wp-caption.aligncenter {
+	margin: 16px auto;
+}
+
+.wp-caption-dt {
+	margin: 0;
+}
+
+.wp-caption .wp-caption-text,
+.wp-caption-dd {
+	font-size: 13px;
+	line-height: 1.5;
+	margin: 16px 0;
+	padding: 0 10px 0 0; /* Avoid the caption to overflow the width of the image because wp-caption has 10px wider width */
+	text-align: left;
+}
+
+/**
+ * 9.0 Gallery
+ * -----------------------------------------------------------------------------
+ */
+
+.gallery .gallery-item {
+	float: left;
+	margin: 0.5%;
+	padding: 0;
+	overflow: hidden;
+	position: relative;
+}
+
+.gallery-columns-1 .gallery-item {
+	width: 33%;
+	float: none;
+	margin: 0 auto;
+}
+
+.gallery-columns-2 .gallery-item {
+	width: 33%;
+}
+
+.gallery-columns-2 .gallery-item:nth-of-type(odd) {
+	margin-left: 16%;
+}
+
+.gallery-columns-2 .gallery-item:nth-of-type(even) {
+	margin-right: 16%;
+}
+
+.gallery-columns-3 .gallery-item {
+	width:32.3334%;
+}
+
+.gallery-columns-4 .gallery-item {
+	width: 24.4%;
+	margin: 0.3%;
+}
+
+.gallery-columns-5 .gallery-item {
+	width: 19.4%;
+	margin: 0.3%;
+}
+
+.gallery-columns-6 .gallery-item {
+	width: 16.0667%;
+	margin: 0.3%;
+}
+
+.gallery-columns-7 .gallery-item {
+	width: 13.8857%;
+	margin: 0.2%;
+}
+
+.gallery-columns-8 .gallery-item {
+	width: 12.1%;
+	margin: 0.2%;
+}
+
+.gallery-columns-9 .gallery-item {
+	width: 10.7111%;
+	margin: 0.2%;
+}
+
+.gallery .gallery-caption {
+	background-color: rgba(0, 0, 0, 0.7);
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing:    border-box;
+	box-sizing:         border-box;
+	color: #fff;
+	font-size: 12px;
+	line-height: 1.5;
+	margin: 0;
+	max-height: 50%;
+	opacity: 0;
+	padding: 6px 8px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	text-align: left;
+	width: 100%;
+}
+
+.gallery-item:hover .gallery-caption {
+	opacity: 1;
+}
+
+.gallery-columns-5 .gallery-caption,
+.gallery-columns-6 .gallery-caption,
+.gallery-columns-7 .gallery-caption,
+.gallery-columns-8 .gallery-caption,
+.gallery-columns-9 .gallery-caption {
+	display: none;
+}

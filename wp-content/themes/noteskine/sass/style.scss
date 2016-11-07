@@ -1,0 +1,57 @@
+/*
+Theme Name: Noteskine
+Author: Arkadiusz Zalewski
+Author URI: http://pinczek.pl/
+Description: Noteskine is classic, minimal and clean WordPress Blog Theme. Ideal for active and ambitious bloggers who love to share their creativity with audience. Responsive and consistent design supports user experience and readability. Create articles with pull quotes, drop caps and highlighted boxes. Eight post formats give you ability to style content accordingly to your needs. Easy to use customizer panel allows to modify Noteskine  theme with endless color variations. Decide which functions do you need and turn them on or off. Feel free to customize your Noteskine as you wish. Make it unique and more personal.
+Tags: one-column,  responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
+Version: 1.0.7
+License: GNU General Public License v3.0
+License URI: http://www.gnu.org/licenses/gpl.html
+Domain Path: /languages/
+Text Domain: noteskine
+*/
+
+/**
+ * Table of Contents:
+ *
+ * 1.0 - Reset
+ * 2.0 - Repeatable Patterns
+ * 3.0 - Basic Structure
+ * 4.0 - Header
+ * 5.0 - Header Navigation
+ * 6.0 - Hero Area
+ * 7.0 - Content
+ *   7.1 - Post Thumbnail
+ *   7.2 - Entry Header
+ *   7.3 - Entry Meta
+ *   7.4 - Entry Content
+ *   7.5 - Galleries
+ *   7.6 - Attachments
+ *   7.7 - Post Formats
+ *   7.8 - 404 Page
+ *   7.9 - Archives
+ * 8.0 - Related Posts
+ * 9.0 - Comments
+ * 10.0 - Paging Navigation
+ * 11.0 - Footer
+ * 12.0 - Media Queries
+ * ----------------------------------------------------------------------------------------
+ */
+
+// Modules
+@import "modules/variables";
+@import "modules/mixins";
+
+// Partials
+@import "partials/reset";
+@import "partials/repeatable-patterns";
+@import "partials/basic-structure";
+@import "partials/header";
+@import "partials/header-navigation";
+@import "partials/hero-area";
+@import "partials/content";
+@import "partials/related-posts";
+@import "partials/comments";
+@import "partials/paging-navigation";
+@import "partials/footer";
+@import "partials/media-queries";

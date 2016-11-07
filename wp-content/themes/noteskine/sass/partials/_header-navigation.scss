@@ -1,0 +1,173 @@
+/**
+*	5.0 Header Navigation
+*
+* ------------------------------------------------------------------------------------------
+*/
+
+/* Header Menu */
+
+#header-menu {
+	display: none;
+	float: right;
+	font-size: 16px;
+	max-width: 80%;
+}
+
+#header-menu li {
+	display: block;
+	float: left;
+	height: 42px;
+	line-height: 42px;
+	position: relative;
+}
+
+#header-menu li a {
+	color: $header-text-color;
+	display: block;
+	height: 42px;
+	line-height: 42px;
+	padding: 0 17px;
+}
+
+#header-menu a:hover {
+	@include main-transition;
+	background: $header-text-color;
+	color: $header-background-color; // bylo #000
+}
+
+#header-menu ul ul {
+	display: none;
+	padding-top: 8px;
+	position: absolute;
+	top: 42px;
+	ul {
+		margin-top: -8px;
+		padding-right: 8px;
+	}
+}
+
+
+#header-menu ul ul li {
+	background-color: $header-background-color;
+	float: none;
+	min-width: 160px;
+	&:first-child {
+		border-top-left-radius: 4px;
+		border-top-right-radius: 4px;
+		& > a {
+			border-top-left-radius: 4px;
+			border-top-right-radius: 4px;
+		}
+	}
+	&:last-child {
+		border-bottom-left-radius: 4px;
+		border-bottom-right-radius: 4px;
+		& > a {
+			border-bottom-left-radius: 4px;
+			border-bottom-right-radius: 4px;
+		}
+	}
+	a {
+		padding: 0 17px;
+	}
+}
+
+#header-menu ul li:hover > ul {
+	display: block !important;
+}
+
+#header-menu ul ul li ul {
+	top: 0;
+	right: 160px;
+	width: 160px;
+}
+
+/* Post Navigation */
+
+#post-navigation {
+	font-size: 16px;
+	line-height: 30px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+}
+
+#post-navigation #post-buttons {
+	display: inline-block;
+	margin: 5px auto;
+}
+
+#post-navigation #post-buttons a {
+	border: 1px solid $header-text-color;
+	color: $header-text-color;
+	float: left;
+	min-width: 140px;
+	padding: 0 10px;
+	&:hover {
+		@include main-transition;
+		background: $header-text-color;
+		color: $header-background-color; // bylo #000
+	}
+	&:first-child {
+		border-top-left-radius: 8px;
+		border-bottom-left-radius: 8px;
+	}
+	&:last-child {
+		border-top-right-radius: 8px;
+		border-bottom-right-radius: 8px;
+		border-left-width: 0;
+	}
+	&:nth-child(2) {
+		border-left-width: 0;
+	}
+}
+
+/* Next / Previous Post Title on hover */
+
+#prev-title a,
+#next-title a {
+	background: $header-background-color;
+	border-radius: 8px;
+	color: $header-text-color;
+	display: none;
+	font-size: 18px;
+	line-height: 42px;
+	margin: 0px auto;
+	padding: 0px 20px;
+}
+
+/* Top / Bottom Navigation */
+
+#bottom-button,
+#top-button {
+	display: none;
+	max-width: 960px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+}
+
+a.bottom-scroll,
+a.top-scroll {
+	color: $header-text-color;
+	display:block;
+	font-size: 24px;
+	line-height: 42px;
+	margin: 0 auto;
+	text-align: center;
+	width: 200px;
+}
+
+.fa-step-forward,
+.fa-step-backward {
+	-webkit-transform: rotate(-90deg);
+	-moz-transform:    rotate(-90deg);
+	-ms-transform:     rotate(-90deg);
+	-o-transform:      rotate(-90deg);
+}

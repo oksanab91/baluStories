@@ -1,0 +1,80 @@
+/**
+ * 10.0 Paging Navigation
+ *
+ * ----------------------------------------------------------------------------------------
+ */
+
+.pagination {
+	font-size: 16px;
+	margin: 40px 0 32px;
+	text-align: center;
+	ul {
+		display: inline-block;
+	}
+	.current {
+		background: $navigation-text-color;
+		color: $background-color;
+	}
+	.page-numbers:hover {
+		background: $navigation-text-color;
+		color: $background-color;
+		transition: $main-transition;
+	}
+}
+
+.pagination ul > li {
+	display: inline;
+	&:first-child > a,
+	&:first-child > span {
+		border-left-width: 1px;
+		border-radius: 8px 0 0 8px;
+	}
+	& > a,
+	& > span {
+		border: 1px solid $navigation-text-color;
+		border-left-width: 0;
+		color: $navigation-text-color;
+		float: left;
+		line-height: 30px;
+		padding: 0 12px;
+	}
+	&:last-child > a,
+	&:last-child > span {
+		border-right-width: 1px;
+		border-radius: 0 8px 8px 0;
+	}
+}
+
+#mobile-pagination {
+	display: none;
+	font-size: 16px;
+	margin: 40px auto 32px;
+	text-align: center;
+	span {
+		display: inline-block;
+		a {
+			border: 1px solid $navigation-text-color;
+			color: $navigation-text-color;
+			float: left;
+			line-height: 30px;
+			min-width: 160px;
+			padding: 0px 10px;
+			&:hover {
+				background: $navigation-text-color;
+				color: $background-color;
+			}
+			&:first-child {
+				border-top-left-radius: 8px;
+				border-bottom-left-radius: 8px;
+			}
+			&:nth-child(2) {
+				border-left: 0;
+			}
+			&:last-child {
+				border-top-right-radius: 8px;
+				border-bottom-right-radius: 8px;
+			}
+		}
+	}
+}
+

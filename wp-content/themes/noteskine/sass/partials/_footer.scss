@@ -1,0 +1,166 @@
+/**
+ * 	11.0 Footer
+ *
+ * ----------------------------------------------------------------------------------------
+ */
+
+#fat-footer {
+	bottom: 0;
+	height: 0px; /*48px*/
+	position: absolute;
+	left:0;
+	width: 100%;
+}
+
+#footer-wrapper {
+	background: $footer-background-color;
+	width: 100%;
+}
+
+/* Widget Area */
+
+.footer-widgets {
+	border-bottom: 1px solid $footer-text-color;
+	display: block;
+	font-size: 16px;
+	margin: 0 auto;
+	max-width: 960px;
+	overflow: hidden;
+	padding: 20px 0 20px;
+	& > div {
+		display: inline-block;
+		float: left;
+		overflow: hidden;
+		padding: 0 2.5%;
+		width: 28.3%;
+	}
+}
+
+
+/* Widgets */
+
+.widget-container {
+	clear: both;
+	color: $footer-text-color;
+	line-height: 1.6;
+	margin-bottom: 20px;
+	li {
+		line-height: 36px;
+		list-style: none;
+		width: 100%;
+	}
+	a {
+		color: $footer-accent-color;
+		&:hover {
+			color: $footer-text-color;
+			transition: $main-transition;
+		}
+	}
+	img {
+		height: auto;
+		max-width: 100%;
+	}
+	iframe {
+		margin: 0 auto;
+		width: 100%;
+	}
+}
+
+
+.widget-title {
+	border-bottom: 1px solid $footer-text-color;
+	color: $footer-text-color;
+	margin: 0 0 10px;
+	padding: 5px 0;
+}
+
+.widget_calendar {
+	#wp-calendar {
+		border: none;
+		font-size: 18px;
+	}
+	th,	td {
+		border: none;
+		padding: 4px;
+		text-align: center;
+	}
+}
+
+.widget-container .tagcloud a {
+	background: $footer-accent-color;
+	border-radius: 2px;
+	color: $footer-background-color;
+	float: left;
+	font-size: 14px !important;
+	margin: 2px;
+	padding: 0 4px;
+	&:hover {
+		background: $footer-text-color;
+		color: $footer-background-color;
+		transition: $main-transition;
+	}
+}
+
+.widget_search input[type="search"] {
+	background: none;
+	border: 1px solid $footer-text-color;
+	border-radius: 8px;
+	box-sizing:border-box;
+	color: $footer-text-color;
+	font-size: 16px;
+	height: 32px;
+	line-height: 1;
+	margin: 0 auto;
+	padding: 0px 10px;
+	width: 100%;
+}
+
+.widget_search input[type="search"]::-webkit-input-placeholder {
+	color: $footer-text-color;
+	opacity: 0.5;
+}
+
+/* Colophon */
+#colophon {
+	color: $footer-text-color;
+	line-height: 42px;
+	margin: 0 auto;
+	max-width: 960px;
+	overflow: hidden;
+}
+
+#copyright-message {
+	display: inline-block;
+	font-size: 12px;
+	margin-left: 8px;
+}
+
+/* Footer Menu */
+
+#footer-menu {
+	float: right;
+	font-size: 16px;
+	ul {
+		float: left;
+		ul {
+			display: none;
+		}
+	}
+	li {
+		display: inline-block;
+		a {
+			color: $footer-text-color;
+			display: block;
+			height: 42px;
+			line-height: 42px;
+			padding: 0 15px;
+			transition: $main-transition;
+			&:hover {
+				background: $footer-text-color;
+				color: $footer-background-color;
+			}
+		}
+	}
+}
+
+

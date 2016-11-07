@@ -1,0 +1,325 @@
+/**
+ * 	9.0 Comments
+ *
+ * ----------------------------------------------------------------------------------------
+ */
+
+/* Comments Style  */
+
+.comments-wrapper {
+	background: #fff;
+	margin: 40px auto;
+	overflow: hidden;
+}
+.comments-area {
+	margin: 0 auto;
+	width: 66.6667%;
+}
+
+.comments-title {
+	color: $main-text-color;
+	font-size: 24px;
+	font-weight: bold;
+	margin: 20px auto;
+	text-align: center;
+}
+
+.comment-list {
+	border-top: 1px solid #ebebeb;
+	border-bottom: 1px solid #ebebeb;
+}
+
+.comments-area li {
+	font-size: 16px;
+	list-style: none;
+	margin: 20px auto;
+}
+
+.children .comment.depth-2 {
+	padding: 0 0 0 60px;
+}
+
+.children .comment.depth-3,
+.children .comment.depth-4,
+.children .comment.depth-5 {
+	padding: 0 0 0 46px;
+}
+
+.avatar {
+	border-radius: 8px;
+	float: left;
+	height: 48px;
+	width: 48px;
+}
+
+.children .avatar {
+	border-radius: 4px;
+	height: 36px;
+	width: 36px;
+}
+
+.comment-content {
+	overflow: hidden;
+	padding: 0 0 0 12px;
+}
+
+.comment-author a {
+	color: $accent-color;
+	margin-right: 12px;
+	padding: 0 2px;
+}
+
+.bypostauthor .comment-author a {
+	font-weight: bold;
+}
+
+.comment-time {
+	color: $second-text-color;
+	font-size: 16px;
+	margin-right: 12px;
+}
+
+.waiting {
+	color: $second-text-color;
+	font-size: 16px;
+}
+
+.comment-text p {
+	margin: 8px 0;
+}
+
+.comment-text a {
+	color: $accent-color;
+}
+
+.comment-text dl,
+.comment-text table,
+.comment-text pre {
+	font-size: 16px;
+}
+
+.comment-text ul,
+.comment-text ol {
+	list-style-position: outside;
+	margin: 4px 0;
+	padding-left: 4%;
+	text-align: left;
+}
+
+.comment-text ul li {
+	list-style: disc;
+}
+.comment-text ol li {
+	list-style: decimal;
+}
+
+.comment-text li {
+	font-size: 16px;
+	margin: 0;
+}
+
+.comment-text img,
+.comment-text iframe,
+.comment-text embed {
+	max-width: 100%;
+}
+
+.comment-footer a {
+	color: $accent-color;
+	font-size: 14px;
+	margin-top: 8px;
+	padding: 0 2px;
+}
+
+.reply a {
+	margin-right: 12px;
+}
+
+.comment-author a:hover,
+.comment-text a:hover,
+.comment-footer a:hover,
+.pingback a:hover {
+	background: $accent-color;
+	border-radius: 4px;
+	color: #fff;
+}
+
+.pingback {
+	color: $second-text-color;
+	a {
+		color: $accent-color;
+		margin-left: 12px;
+		padding: 0 2px;
+	}
+}
+
+
+/* Comment Form */
+
+#respond {
+	margin: 20px auto;
+	overflow: hidden;
+}
+
+#reply-title {
+	color: $main-text-color;
+	font-size: 24px;
+	font-weight: bold;
+	margin: 0 auto 20px;
+	text-align: center;
+}
+
+#cancel-comment-reply-link {
+	color: $accent-color;
+	font-size: 24px;
+	margin: 0 0 0 20px;
+	padding: 0 2px;
+}
+
+.logged-in-as,
+.must-log-in,
+.comment-notes {
+	color: $second-text-color;
+	font-size: 16px;
+	margin: 20px auto;
+	text-align: center;
+}
+
+.must-log-in a,
+.logged-in-as a {
+	color: $accent-color;
+	padding: 0 2px;
+}
+
+#cancel-comment-reply-link:hover,
+.must-log-in a:hover,
+.logged-in-as a:hover {
+	background: $accent-color;
+	border-radius: 4px;
+	color: #fff;
+	transition: $main-transition;
+}
+
+.comment-form-author,
+.comment-form-email,
+.comment-form-url,
+.comment-form-comment {
+	margin: 10px auto;
+}
+
+.comment-form-author label[for="author"],
+.comment-form-email label[for="email"],
+.comment-form-url label[for="url"],
+.comment-form-comment label[for="comment"] {
+	color: $second-text-color;
+	display: block;
+	font-size: 16px;
+	padding: 0 0 4px;
+
+}
+
+.comment-form-author input[name="author"],
+.comment-form-email input[name="email"],
+.comment-form-url input[name="url"]{
+	background: #ebebeb;
+	border: 0px;
+	border-radius: 8px;
+	box-sizing:border-box;
+	color: $main-text-color;
+	display: block;
+	font-size: 16px;
+	height: 42px;
+	padding: 0 10px;
+	width: 100%;
+}
+
+.comment-form-comment textarea#comment {
+	background: #ebebeb;
+	border: 1px solid #ebebeb;
+	border-radius: 8px;
+	box-sizing:border-box;
+	display: block;
+	font-family: Open Sans;
+	font-size: 16px;
+	height: 210px;
+	line-height: 1.5;
+	padding: 5px 10px;
+	width: 100%;
+}
+
+#commentform input:focus,
+.comment-form-comment textarea#comment:focus {
+	border: 1px solid $second-text-color;
+}
+
+.form-submit {
+	margin: 40px auto 20px;
+	text-align: center;
+	#submit {
+		background: none;
+		border: 1px solid $accent-color;
+		border-radius: 8px;
+		color: $accent-color;
+		font-family: Open Sans;
+		font-size: 16px;
+		line-height: 28px;
+		width: 33%;
+		&:hover {
+			background: $accent-color;
+			border: 1px solid $accent-color;
+			color: #fff;
+			transition: $main-transition;
+		}
+	}
+}
+
+
+/* Comments Navigation */
+
+#comment-nav {
+	font-size: 16px;
+	margin: 20px auto;
+	text-align: center;
+	span {
+		display: inline-block;
+		a {
+			border: 1px solid $second-text-color;
+			color: $second-text-color;
+			float: left;
+			line-height: 30px;
+			min-width: 150px;
+			padding: 0 10px;
+			&:hover {
+				background: $second-text-color;
+				color: #fff;
+			}
+
+			&:first-child {
+				border-top-left-radius: 8px;
+				border-bottom-left-radius: 8px;
+			}
+
+			&:last-child {
+				border-top-right-radius: 8px;
+				border-bottom-right-radius: 8px;
+			}
+
+			&:nth-child(2) {
+				border-left-width: 0;
+			}
+		}
+	}
+}
+
+/* DISQUS Support */
+
+#disqus_thread {
+	background: #fff;
+	margin: 40px auto;
+	text-align: center;
+	iframe {
+		background: #fff;
+		max-width: 66%;
+		padding: 20px 0;
+	}
+}

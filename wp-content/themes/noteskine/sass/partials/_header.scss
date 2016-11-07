@@ -1,0 +1,130 @@
+/**
+* 	4.0 Header
+*
+* ------------------------------------------------------------------------------------------
+*/
+
+/* Fix for fixed elements on mobile devices */
+
+.fixfixed #site-header,
+.fixfixed #reading-progress,
+.fixfixed #hero-image {
+    position: absolute;
+}
+
+/* Site header */
+
+#site-header {
+	background: $header-background-color;
+	height: 42px;
+	margin-bottom: 0px;
+	position: fixed;
+	width: 100%;
+	z-index: 9999;
+}
+
+#wrapper {
+	margin: 0 auto;
+	max-width: 960px;
+	position: relative;
+}
+
+/* Title & Logo */
+
+#branding {
+	float: left;
+	position: relative;
+	z-index: 9999;
+}
+
+#site-title {
+	color: $header-text-color;
+	font-size: 24px;
+	line-height: 42px;
+	margin: 0 10px;
+	a {
+		color: $header-text-color;
+	}
+}
+
+#branding img {
+	max-height: 42px;
+}
+
+/* Menu Button & Search Button */
+
+.toggle-search,
+.toggle-menu {
+	line-height: 42px;
+}
+
+.toggle {
+	color: $header-text-color;
+	float: right;
+	font-size: 28px;
+	margin: 0 10px;
+	position: relative;
+	z-index: 9999;
+	&:hover {
+		cursor: pointer;
+	}
+	.fa-times {
+		display: none;
+	}
+}
+
+
+/* Search Box (in the Header) */
+
+.top-search-box {
+	display: none;
+}
+
+#top-search input[type="search"] {
+	background: none;
+	border: 1px solid $header-text-color;
+	border-radius: 8px;
+	box-sizing:border-box;
+	color: $header-text-color;
+	float: right;
+	font-size:16px;
+	height: 32px;
+	line-height: 1;
+	margin: 5px;
+	padding: 0px 10px;
+	width: 200px;
+	vertical-align: bottom;
+}
+
+#top-search input[type="search"]::-webkit-input-placeholder {
+	color: $header-text-color;
+	opacity: 0.5;
+}
+
+/* Reading Progress Bar */
+
+#reading-progress {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background-color: transparent;
+	border: none;
+	color: $accent-color;
+	height: 4px;
+	margin-top: 42px;
+	position: fixed;
+	left: 0;
+	width: 100%;
+	z-index: 9999;
+}
+
+progress::-webkit-progress-bar {
+	background-color: transparent;
+}
+
+progress::-webkit-progress-value {
+	background-color: $accent-color;
+}
+
+progress::-moz-progress-bar {
+	background-color: $accent-color;
+}
